@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.stacksimplify.restservices.entities.User;
+import com.stacksimplify.restservices.entities.Views;
 import com.stacksimplify.restservices.exception.UserExistsException;
 import com.stacksimplify.restservices.exception.UserNotFoundException;
 import com.stacksimplify.restservices.exception.UsernameNotFoundException;
