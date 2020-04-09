@@ -23,21 +23,21 @@ import com.stacksimplify.restservices.services.UserService;
 public class UserModelMapperController {
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
-	
+
 	@GetMapping("/{id}")
 	public UserMmDto getUserById(@PathVariable("id") @Min(1) Long id) throws UserNotFoundException {
-		
-			Optional<User> userOptional = userService.getUserById(id);
-			if(!userOptional.isPresent()) {
-				throw new UserNotFoundException("user not found");
-			}
-			User user = userOptional.get();
-			UserMmDto userMmDto = modelMapper.map(user, UserMmDto.class);
-			return userMmDto;
-		
+
+		Optional<User> userOptional = userService.getUserById(id);
+		if (!userOptional.isPresent()) {
+			throw new UserNotFoundException("user not found");
+		}
+		User user = userOptional.get();
+		UserMmDto userMmDto = modelMapper.map(user, UserMmDto.class);
+		return userMmDto;
+
 	}
 
 }
